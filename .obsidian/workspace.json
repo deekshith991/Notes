@@ -1,0 +1,253 @@
+{
+  "main": {
+    "id": "66e7fcbf428a8888",
+    "type": "split",
+    "children": [
+      {
+        "id": "9159e70449a1536f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4dfb62f7bcd8d276",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Progress 2027.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Progress 2027"
+            }
+          },
+          {
+            "id": "3574dcaa7c9d14c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Jobs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Jobs"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "259c28d6c47a76a4",
+    "type": "split",
+    "children": [
+      {
+        "id": "99068c2b743b20fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d15c44312d7a266a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b6c3aef1a0fa7d70",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "[\"tags\"]",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b971b77fdd9bb09b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ebdd34691b150431",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd70acee4cc621f8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b0f57e85111a4eb0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "books/Electronics/Agarwal and Lang (2005) Foundations of Analog and Digital.pdf",
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": true,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Agarwal and Lang (2005) Foundations of Analog and Digital"
+            }
+          },
+          {
+            "id": "445ace0827229b07",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "books/Electronics/Agarwal and Lang (2005) Foundations of Analog and Digital.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Agarwal and Lang (2005) Foundations of Analog and Digital"
+            }
+          },
+          {
+            "id": "b56a32fa0b86e85f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "93543f4dd82b9e5b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "37969e036bf1b496",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "books/Electronics/Agarwal and Lang (2005) Foundations of Analog and Digital.pdf",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Agarwal and Lang (2005) Foundations of Analog and Digital"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "3574dcaa7c9d14c8",
+  "lastOpenFiles": [
+    "Progress 2027.md",
+    "Jobs.md",
+    "communication_protocols/SPI.md",
+    "communication_protocols/SPI.md~",
+    "Images/spi-cpha.png",
+    "Images/spi-CPOL.png",
+    "Network theory/Units/Ampere.md",
+    "Images/IMG_20260301_110755.jpg",
+    "Images/IMG_20260301_104517.jpg",
+    "Images/spi-communication.png",
+    "Images/SPI-communication-protocol.jpg",
+    "Images/Unconfirmed 355873.crdownload",
+    "Network theory/Definations.md",
+    "math formulas.md",
+    "programming/Untitled.md",
+    "Network theory/Circuit analysis techniques.md",
+    "programming/Make.md",
+    "programming/Make.md~",
+    "books/Electronics/Network_theory/Electric-Circuit-Analysis-Book-4.pdf",
+    "books/Electronics/Network_theory/Electric-Circuit-Analysis-Book-4.pdf.part",
+    "Excalidraw/Drawing 2026-03-29 22.44.02.excalidraw.md",
+    "Untitled.base",
+    "Excalidraw",
+    "programming/GCC FLAGS.md",
+    "Electronics/Switch_mode_power_supply_are_noisy.md",
+    "books/Software/The_C_programming_Language.pdf",
+    "books/Psycho-Cybernetics+by+Maxwell+Maltz+-+NJlifehacks+book+summary.pdf",
+    "books/Software/Expert_C_programming.pdf",
+    "Images/ResizedImage_2026-03-14_19-15-31_1-2.jpg",
+    "Images/ResizedImage_2026-03-14_19-15-31_1.jpg",
+    "Images/1773498764724.jpg",
+    "Images/1773497074454.jpg",
+    "Network theory/Units/Resistor.md",
+    "Network theory/Types of Linear Analysis.md",
+    "MITx6.00X/Lumped Element.md",
+    "Excalidraw/Drawing 2026-02-25 13.55.28.excalidraw.md",
+    "programming/Rust.md",
+    "datasheets/README.md",
+    "Untitled.canvas",
+    "Excalidraw/Drawing 2026-02-24 13.09.02.excalidraw.md",
+    "Embedded_resources.md",
+    "contacts/Shreevasthav.md",
+    "Career_advice/Discord.md",
+    "littlefuse.md"
+  ]
+}
