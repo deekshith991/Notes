@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "Jobs"
             }
+          },
+          {
+            "id": "599f5a8565865f4f",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Try_D.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Try_D"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -203,10 +215,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "3574dcaa7c9d14c8",
+  "active": "599f5a8565865f4f",
   "lastOpenFiles": [
-    "Progress 2027.md",
     "Jobs.md",
+    "Excalidraw/Try_D.md",
+    "Progress 2027.md",
     "communication_protocols/SPI.md",
     "communication_protocols/SPI.md~",
     "Images/spi-cpha.png",
