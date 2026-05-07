@@ -88,5 +88,40 @@ Basics of Embedded C - contains C topics.
 
 And some more info on Dynamic memory allocation.
 
+## Video 8: Bit manipulation
 
+***Race condition***: Difference between time a value is read and when it is written/updated.
+Eg: When we read a value and try to set it to another value another part of program changes the read value.
 
+- ***Atomic manipulation :*** Read-modify-write guaranteed to be done a one operation. Requires hardware support on the CPU.
+- ***Bit Bitbanding***: specific 1MB area is mapped to a 32MB address space.
+
+- use volatile so that compiler doesn't remove some pin value setting.
+
+## Video 9: Embedded C programming | three ways to blink an LED
+use [wokwi](https://wokwi.com) a simulator
+
+#### Blinking LED
+```c
+
+#define LED D13
+
+void setup(){
+  pinMode(LED, OUTPUT);
+}
+
+void loop(){
+  digitalWrite(LED, HIGH);
+  delay(1000);
+  digitalWrite(LED, LOW);
+  delay(1000);
+}
+```
+
+- Here D13 is the pin defined by STM32 SDK ehich is address of the pin 
+- setup function will set all the GPIO pins to equired mode here we are setting D13 to output mode.
+- void loop run endlessly
+- digitalWrite function is using to set the pin signal to high and low
+
+## Video 10: General purpose IO in Microcontroller
+  
