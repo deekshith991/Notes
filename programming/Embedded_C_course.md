@@ -118,10 +118,44 @@ void loop(){
 }
 ```
 
-- Here D13 is the pin defined by STM32 SDK ehich is address of the pin 
-- setup function will set all the GPIO pins to equired mode here we are setting D13 to output mode.
+- Here D13 is the pin defined by STM32 SDK which is address of the pin 
+- setup function will set all the GPIO pins to required mode here we are setting D13 to output mode.
 - void loop run endlessly
 - digitalWrite function is using to set the pin signal to high and low
 
 ## Video 10: General purpose IO in Microcontroller
-  
+- CPU can't access anything outside itself.
+- when we need more data we interface Memory to the CPU.
+- for reading and writing we send Address and data over a BUS with read or write enable signal.
+
+- when a GPIO - set to output => CPU IS DRIVING the pin.
+- when a GPIO - set to input  => External circuit drives the pin.
+- if modes are set incorrectly it may cause it to short-circuit.
+
+> [!INFO]
+> So the CPU will always set a GPIO pin to input when it is initialized.
+
+- Mode selection is done using a register.
+- There are certain pins that can acts as a Analog/Digital pin.
+
+> [!WARNING]
+> For a floating pin we can't find the voltage. And there is high impedence.
+> to avoid the undefined behaviour we use pull-down resistor to make it defined.
+
+
+#### HAL code
+```c
+
+void initGPIO(){
+  GIO_InitTypedef GPIO_Config;
+
+  GPIO_Config.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_Config.Pull = GPIO_NOPULL;
+  GPIO_Config.Speed = GPIO_SPEED_FREQ_HIGH;
+
+  GPIO_Config.Pin = LED_PIN;
+
+  SET_BIT(RCC-> IOPENR, RCC_IOPENR_GPIOAEN);
+  HAL_GPIO_Init(LED_PORT, &GPIO_Config);
+}
+```
