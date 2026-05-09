@@ -1,0 +1,13 @@
+#+title: Org-Mode Basic
+#+DESCRIPTION: Org doocument to demonstrate org-Mode
+#+AUTHOR: Deekshith Vaggu
+
+* Level 1
+** Level 2
+*** Level 3
+**** ... So on
+
+
+* Getting started in ORG-Mode
+org-toggle-heading : SPC m h
+fold the group : SHIFT TAB / z c

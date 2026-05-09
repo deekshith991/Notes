@@ -159,3 +159,87 @@ void initGPIO(){
   HAL_GPIO_Init(LED_PORT, &GPIO_Config);
 }
 ```
+
+## Video 11: GPIO Usage
+
+
+### Incase of output
+
+- When a CPU is 1.8V and sensor is 5V it may cause problems.
+- So we need to know about the connection buffer.
+
+### Similar to current case
+
+- If the CPU can only output 5mA and we need to run a 10mA load, the buffer may short-circuit.
+- Similarly if the sensor sends in 40mA and CPU can only sink 10mA that will damage the port.
+
+### If we want to drive a motor
+
+- We can only send 5mA but motor needs 100mA.
+
+If we connect directly:
+
+1. Either the motor spins at 5% speed
+2. Or the CPU gets short-circuited
+
+- For this we use a switch where the CPU controls the ON/OFF.
+- The switch will deliver the large amount of current.
+
+- [Push Button](###pushuuu) are mechanical switches.
+- [ESD Protection](#esd-protection) is required for the pins.
+- Always check for ESD.
+
+### Examples
+
+- LED control — signaling, status
+- Button inputs
+- Driving relays
+- Sensor interfacing
+  - Analog / Digital
+- Communication protocols
+  - Bit Banging (software implementation)
+
+
+### Push Button
+
+It is a mechanical switch. When pressed and released it will bounce back.
+
+- When debounced it cuts off the signal called **Debounce**.
+
+
+### ESD Protection
+
+ESD — Electro Static Discharge
+
+This is the charge that builds up on a surface/body.
+
+> Warning:
+> Never touch the pins directly.
+
+## Video 12: UART — Universal Asynchronous Receiver Transmitter
+
+- Asynchronous — No shared clock.
+
+![UART Data Packet Frame](Images/STM32-UART-Data-Packet-Frame.png)
+
+- Always the idle state in UART is HIGH.
+- First bit is LOW to say the data flow started.
+- There is HIGH at the end to say that we are stopping data transfer.
+
+### Parameters : 8N1 @ 9600
+
+- 8 — number of data bits
+- N — no parity bits
+- 1 — one stop bit
+
+9600 bits/second (Baud Rate)
+
+### Disadvantages
+
+- Speed lowers data rates
+- Sensitive to baud-rate mismatch
+- No shared clock — fails for clock drift
+- Multi-master/multi-slave is not possible
+- Frame overhead is significant
+- Basic error detection, no correction
+- Cable length decides the signal integrity
