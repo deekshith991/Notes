@@ -163,7 +163,7 @@ void initGPIO(){
 ## Video 11: GPIO Usage
 
 
-### Incase of output
+### In-case of output
 
 - When a CPU is 1.8V and sensor is 5V it may cause problems.
 - So we need to know about the connection buffer.
@@ -185,7 +185,7 @@ If we connect directly:
 - For this we use a switch where the CPU controls the ON/OFF.
 - The switch will deliver the large amount of current.
 
-- [Push Button](###pushuuu) are mechanical switches.
+- [Push Button](###push-Button) are mechanical switches.
 - [ESD Protection](#esd-protection) is required for the pins.
 - Always check for ESD.
 
@@ -213,7 +213,7 @@ ESD — Electro Static Discharge
 
 This is the charge that builds up on a surface/body.
 
-> Warning:
+>[!Warning]
 > Never touch the pins directly.
 
 ## Video 12: UART — Universal Asynchronous Receiver Transmitter
@@ -243,3 +243,81 @@ This is the charge that builds up on a surface/body.
 - Frame overhead is significant
 - Basic error detection, no correction
 - Cable length decides the signal integrity
+
+## Video 13: Datasheet reading
+read the Datasheet's
+1. [Red led](../datasheets/Datasheet-reading/red_led_1498852.pdf)
+2. [STM32](../datasheets/Datasheet-reading/STM32-nucleo-64_DM00105823.pdf)
+3. [stm32-microprocessor](../datasheets/Datasheet-reading/stm32c031c4.pdf)
+
+## Video 14: Analog to Digital Conversion
+- CPU works with binary system but most of the sensors work in Analog signal.
+- So we sample the Analog signal at a discrete time using a ADC convertor.
+
+- ADC range for N-bits => 0 - 2^N - 1
+
+- Ideally
+    Vmin = 0 && Vmax = 2^N -1
+    Step size = (Vmin-Vmax)/2^N 
+
+- Sampling interval = T
+
+- then Sampling frequency (fs) = 1/T
+
+- High fs means high detail
+
+- At a point called ***Nyquist criteria*** there is no use of increasing the Sampling frequency (fs) we don't get reliable details.
+
+STM ADC Settings
+- **PRESCALER** - ADC clock which is a divided of main clock.
+- **RESOLUTION** - 12bit, 10bit, etc...
+- **ALIGNMENT** - left Alignment
+              | 1 0 1 1 0 1 0 0 0 0 0 |
+              | data         | padding|
+            - right Alignment
+              | 0 0 0 0 1 1 0 0 1 1 0 |
+              | padding| data         |
+
+### channels
+- In Microcontroller there is only one ADC with multiple input channels. where it can only convertor one signal at a time but since the time taken is negligible we don't really have problem we can use software to mange the conversion of channels.
+
+- ***scan*** : where we can tell to convert one then auto switch to other.
+- ***continuous*** : After one conversion of one cycle start new cycle.
+- ***Sequencer*** : where we define the sequence of conversion.
+
+### Sample and Hold
+![sample hold Image](../Images/Sample_and_Hold.png)
+for circuit where the signal changes very fast.
+we allow signal to come in via a switch then it store the capacitor then open the switch where the signal stored in capacitor is released then it is converted.
+
+
+#### wokwi Potentiometer control STM32
+
+>[!NOTE]
+> Pin ADC resolution is 10-Bit so max value is 2^10 = 1024-1 
+
+```c
+#define ANALOG_PIN PA0
+#define BAUD_RATE 9600
+
+void setup(){
+  Serial.print("Baud Rate: ");
+  Serial.println(BAUD_RATE);
+  Serial.begin(BAUD_RATE);
+
+  Serial.println("Setting Analog pin to INPUT MODE");
+  pinMode(ANALOG_PIN, INPUT);
+}
+
+void loop(){
+  delay(1000);
+
+  float adcValue = analogRead(ANALOG_PIN);
+  Serial.print("ADC value: ");
+  Serial.print(adcValue);
+
+  Serial.print("Analog percentage: ");
+  Serial.println(adcValue/1023);
+}
+
+```

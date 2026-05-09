@@ -39,12 +39,14 @@
             "id": "599f5a8565865f4f",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Try_D.md"
+                "file": "programming/Embedded_C_course.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Try_D"
+              "icon": "lucide-file",
+              "title": "Embedded_C_course"
             }
           }
         ],
@@ -217,8 +219,10 @@
   },
   "active": "599f5a8565865f4f",
   "lastOpenFiles": [
-    "Jobs.md",
+    "Images/Sample_and_Hold.png",
+    "programming/Embedded_C_course.md",
     "Excalidraw/Try_D.md",
+    "Jobs.md",
     "Progress 2027.md",
     "communication_protocols/SPI.md",
     "communication_protocols/SPI.md~",
