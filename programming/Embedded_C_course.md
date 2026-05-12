@@ -7,6 +7,8 @@
 ## Keywords
 1. SoC - System on Chip
 2. ELF - Executable and Linkable Format
+3. RTC - Real Time Clock
+4. MCU - Micro Controller Unit
 
 ## Video 3
 
@@ -321,3 +323,52 @@ void loop(){
 }
 
 ```
+
+## Video 15: Pulse width modulation
+- there is noise in any voltage or current so when we use steps in the pwm we need to take account of the noise in the resolution of the system.
+
+Eg:
+Voltage range 0 -> 3.3
+- i want 10 steps then resolution is 0.33 volts but there is noise of x% which is the result of factors such as temperature, resistance, emf, etc.
+
+```c
+void setupPWM(){
+  TIMER->PRESCALER = 16;
+  TIMER->PERIOD = 1000;
+
+  // Duty cycle of 50%
+  TIMER->COMPARE = 500;
+
+  TIMER->MODE = PWM_MODE;
+
+  TIMER->START();
+}
+```
+
+## video 16: Clocking in Microcontroller
+- High clock speed is desirable as more commute is possible.
+- High clock speed = High power consumption.
+
+- RTC is a real time most common clock speed is 32MHz.
+
+#### Clock sources 
+- Internal RC oscillators.
+  - MCU can run without external source.
+  - Not very accurate with 1% to 5 % error.
+- External crystal oscillators.
+  - high accuracy.
+  - Low drift 7 temperature sensitivity.
+- Phase Locked Loops.
+  - frequency conversion.
+  - up scale and down scale majorly up scaled.
+- clock division.
+
+## Video 17: Timers
+- clock source
+- mode
+- period & prescaler
+- Interupts
+
+- ***watchdog***: it is a special timer that is separate from the circuit and it should occationaly hit zero if not the system should **pat** the watchdog that means reset. if not it will reset the whole system.
+- watchdog timer should be set a long interval.
+
