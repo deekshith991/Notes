@@ -1,7 +1,9 @@
 
 # SPI (serial peripheral interface)
 
-![[spi-communication.png]]
+ACK - Acknowledgement
+
+![[../Images/spi-communication.png]]
 this method is chain method. Here only 1 CS is needed as all slaves are connected is series.
 
 In another method for every slave we need a dedicated CS pin
@@ -12,8 +14,8 @@ It mainly has 4 lines but not mandatory depends
 
 1. SCLK - serial clock (Master clock)
 2. MOSI - Master out slave in (this sends data out of master)
-3. MISO - Master in slave out (this recieves data from the slave)
-4. CS/SS - chip select(Active low). it is used to set which slave we need to communicate.
+3. MISO - Master in slave out (this receives data from the slave)
+4. CS/SS - chip select(Active low). It is used to set which slave we need to communicate.
 
 In this communication protocol we don't need any Addressing for the slave as we are using CS.
 
@@ -41,4 +43,18 @@ MOSI & MISO sends data in serial order bits/second whether it sends MSB/LSB is s
 |   3  |   1  |   1  |
 
 
+### Working 
+When i want to communicate i toggle the CS then start the SCLK then send the instruction to slave from the MOSI.
+
+### Advantages
+- No start, stop bits.
+- No addressing required.
+- Higher data rates.(10 - 100)Mbps possible
+- send/receive simultaneously.
+
+### Disadvantages
+- 4 wires required.
+- No ACK possible.
+- No error/parity check.
+- Single master.
 

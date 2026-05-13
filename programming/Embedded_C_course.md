@@ -357,7 +357,7 @@ void setupPWM(){
   - Not very accurate with 1% to 5 % error.
 - External crystal oscillators.
   - high accuracy.
-  - Low drift 7 temperature sensitivity.
+  - Low drift & temperature sensitivity.
 - Phase Locked Loops.
   - frequency conversion.
   - up scale and down scale majorly up scaled.
@@ -371,4 +371,45 @@ void setupPWM(){
 
 - ***watchdog***: it is a special timer that is separate from the circuit and it should occationaly hit zero if not the system should **pat** the watchdog that means reset. if not it will reset the whole system.
 - watchdog timer should be set a long interval.
+
+## Video 18: Communication protocols
+- to connect all the peripherals to the MCU. we use a Communication protocols to interconnect all of the to a single bus/interface.
+
+## Video 19: Parallel communication
+- once there used to be a lot of parallel communication but due to some problem paralle communication is reduced.
+- 1. Signal integrity
+    - a. Cross talk: where due to switching the EMF of one line interfere with the other line/
+    - b. Timing skew: where there is a delay of switching between the parallel lines.
+
+- more wire more complex
+
+## Video 20: Serial communication
+- fewer wires. So, less complex,cost
+- No crosstalk or timing skew.
+
+### types of serial communication
+1. UART
+2. SPI
+3. [I2C](../communication_protocols/I2C.md)
+4. 1-wire protocol
+5. [USB](../Electronics/USB.md)
+
+#### SPI - Serial Peripheral Interface
+
+> [!NOTE]
+> Useful for small number of slaves maybe 3/4.
+> to avoid this there is something called daisy chain method.
+> But daisy chain creates latency problems and complex problems.
+
+- Synchronous, Serial, short-distance. protocol.
+- Full duplex Master-slave architecture with select lines.
+[[../communication_protocols/SPI.md]]
+
+
+#### 1-wire protocol
+- Similar to I2C.
+- Addressing Similar to I2C, single master.
+- low data rate
+- half duplex
+
 
