@@ -15,6 +15,8 @@
 -  it has 7 bit 112 receivers
 - And 10 bit mode 1008 receivers.
 
+Data transition always happen when the CLK is LOW.
+
 ### operation
 ![[../Images/I2C-opration.png]]
 - SDA , SCL  both are pulled up by the pull up resistors.
@@ -36,4 +38,5 @@
 - 8 bit Data frame / overhead
 - Hardware is more complex than SPI.
 - Half-duplex mode only.
+
 
