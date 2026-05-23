@@ -9,6 +9,7 @@
 2. ELF - Executable and Linkable Format
 3. RTC - Real Time Clock
 4. MCU - Micro Controller Unit
+5. RF  - Radio Frequency
 
 ## Video 3
 
@@ -411,5 +412,82 @@ void setupPWM(){
 - Addressing Similar to I2C, single master.
 - low data rate
 - half duplex
+
+## Video 21: Networking
+types of Network.
+1. PAN
+2. LAN
+3. WAN
+
+Shape of topologies.
+1. Point to point (Mesh): N^2 links required.
+2. Star network: N Links to a HUB.
+3. Bus: S common bus is used.
+
+Transmission
+- Medium
+  1. Wired
+  2. Wireless
+
+- connection
+  1. Circuit switched
+  2. Packet switched
+
+## Video 22: Wireless communication
+- 2.4GHz, 5GHz are unlicensed bands
+
+#### WiFi - (Wireless Fidelity)
+- IEEE 802.11 specification
+    - 8.2.11a/b/g/n/ac/ax - variants for speed coverage etc
+    - ac is the common variant we find in regualr day to day life.
+- 2.4GHz and 5GHz
+    - they have channels.
+    - attentuation through walls and greenery.
+- Security
+    - WEP, WAP,WPA2, WPA Enterprise
+
+#### Bluetooth
+- profiles and versions
+    - currently 6.x
+- Range upto 100m - but for 5meters
+- Power - Bluetooth Low Energy
+    Designed for minimal power consumption.
+- Security - primarily for personal area
+
+#### ZigBee
+- IEEE 802.15.4
+- Mesh topology - large number of devices.
+    - Low Latency possible.
+- Low power design
+- High data speed than Bluetooth
+
+#### LoRa (Long Range)
+- 15-20Km rural, 2-5Km urban
+- Extremely low power, ideal for battery operation.
+- Star of Star Network.
+- Low data speed
+
+####  GSM / 5G
+- Adapted IOT
+- 5G-NB-IOT explicity for IOT
+- SIM based security
+- Wide range - requires Infrastructure support (Mobile towers)
+
+## Video 23: Fieldbus protocols
+- Network system for real-time distributed ontrol
+
+#### CAN (Controller Area Network)
+- multi-Master Message orienteded
+- each Node can sedn and receive, may  not be simulataneously
+- Carrier Sense Multiple Access with Collosion Detection (CSMACD)
+- Message Priority
+- Upto 1Mbps over 40m, error deection, fault confinement
+
+#### ModBus (Original: Modicon 1979)
+- Master-slave: Master initiates transaction
+- Serial comm's: Modbus RTU, Modbus ASCII
+- Ethernet : Modbus TCP/IP
+- upto 247 devices per network, can be extended
+- Differnet physical layers possible (RS-485, RS-232, TCP/IP)
 
 
