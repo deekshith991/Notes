@@ -595,4 +595,90 @@ Reviewed a basic code pattern in embedded project.
 
 - generally we use ==enum== for the states
 
+## Video 33: RTOS
+- RTOS is a tool for resource management
+- It takes control of all resources.
+- it share the resources based on the priority and requirement.
+
+#### [Tasks](#Video-35-Tasks-in-RTOS)
+- task is a independent unit of execution
+- Own context: register, stack,heap
+- Different operational states:
+  - running
+  - ready
+  - blocked
+  - suspended
+
+
+## Video 34: Operating system concept
+
+Hardware
+   ↓
+Device Drivers
+   ↓
+Hardware Abstraction Layer (HAL)
+   ↓
+Operating System
+   ↓
+Applications
+
+### Device Drivers
+- Interfaces with specific hardware.
+- Generic functions at higher level.
+- common interface functions: open(), read(), close().
+- Developer need ==indepth== knowledge on hardware.
+
+### Hardware Abstraction Layer (HAL)
+- Aim's for independence from specific hardware.
+- Close to hardware but abstract than driver level.
+#### Achieved
+- Generic defined function.
+- where user don't need to know
+- Same code can be used for multiple hardware.
+
+### Operating System
+- Built on top of [HAL](#hardware-abstraction-layer-hal)
+- [Tasks](#Video-35-Tasks-in-RTOS)
+
+### Scheduling
+- tasks run on processor
+- processor time is a resource to be managed.
+- ==***Scheduling***==: decide on which task runs next.
+- Ensure high ==priority== tasks are executed promptly.
+- Multiple scheduling algorithms possible.
+  - Earliest deadline first.
+  - rate monotonic.
+  - fixed priority.
+
+### Priority
+- Not all tasks are equally important.
+- Assign priority levels to tasks. Number: convention.
+- High priority long running tasks may delay the low priority tasks.
+> [!IMPORTANT]
+> for efficient resource management Priority control is required.
+
+### Determinism
+- Predict with certainty when a specific task will execute/complete.
+- critical for real-time systems
+  - Deadlines.
+  - May not be very fast or short duration.
+  - Guarantees are important.
+- RTOS features for providing deterministic execution.
+
+### Examples
+- commercial
+  - VxWorks.
+  - QNX.
+  - ThreadX.
+- open source
+  - Zephyr.
+  - chibiOS/RT.
+- Extensions
+  - RT-Linux.
+  - Windows-RT.
+
+## Video 35: Tasks in RTOS
+- main thread is responsible for creating the tasks.
+- Scheduler responsible for switching between tasks.
+
 
