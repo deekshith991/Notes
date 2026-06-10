@@ -142,7 +142,7 @@ void loop(){
 - There are certain pins that can acts as a Analog/Digital pin.
 
 > [!WARNING]
-> For a floating pin we can't find the voltage. And there is high impedence.
+> For a floating pin we can't find the voltage. And there is high impeadence.
 > to avoid the undefined behaviour we use pull-down resistor to make it defined.
 
 
@@ -223,7 +223,7 @@ This is the charge that builds up on a surface/body.
 
 - Asynchronous — No shared clock.
 
-![UART Data Packet Frame](Images/STM32-UART-Data-Packet-Frame.png)
+![UART Data Packet Frame](../Images/STM32-UART-Data-Packet-Frame.png)
 
 - Always the idle state in UART is HIGH.
 - First bit is LOW to say the data flow started.
@@ -377,7 +377,7 @@ void setupPWM(){
 - to connect all the peripherals to the MCU. we use a Communication protocols to interconnect all of the to a single bus/interface.
 
 ## Video 19: Parallel communication
-- once there used to be a lot of parallel communication but due to some problem paralle communication is reduced.
+- once there used to be a lot of parallel communication but due to some problem parallel communication is reduced.
 - 1. Signal integrity
     - a. Cross talk: where due to switching the EMF of one line interfere with the other line/
     - b. Timing skew: where there is a delay of switching between the parallel lines.
@@ -439,7 +439,7 @@ Transmission
 #### WiFi - (Wireless Fidelity)
 - IEEE 802.11 specification
     - 8.2.11a/b/g/n/ac/ax - variants for speed coverage etc
-    - ac is the common variant we find in regualr day to day life.
+    - ac is the common variant we find in regular day to day life.
 - 2.4GHz and 5GHz
     - they have channels.
     - attentuation through walls and greenery.
@@ -474,20 +474,125 @@ Transmission
 - Wide range - requires Infrastructure support (Mobile towers)
 
 ## Video 23: Fieldbus protocols
-- Network system for real-time distributed ontrol
+- Network system for real-time distributed control
 
 #### CAN (Controller Area Network)
-- multi-Master Message orienteded
-- each Node can sedn and receive, may  not be simulataneously
-- Carrier Sense Multiple Access with Collosion Detection (CSMACD)
+- multi-Master Message oriented
+- each Node can send and receive, may  not be simultaneously
+- Carrier Sense Multiple Access with Collision Detection (CSMACD)
 - Message Priority
-- Upto 1Mbps over 40m, error deection, fault confinement
+- Upto 1Mbps over 40m, error detection, fault confinement
 
 #### ModBus (Original: Modicon 1979)
 - Master-slave: Master initiates transaction
 - Serial comm's: Modbus RTU, Modbus ASCII
 - Ethernet : Modbus TCP/IP
 - upto 247 devices per network, can be extended
-- Differnet physical layers possible (RS-485, RS-232, TCP/IP)
+- Different physical layers possible (RS-485, RS-232, TCP/IP)
+
+## Video 24: Compilation in embedded systems
+Steps in Compilation are:
+- ***Parsing (syntax)***: Breaks input program to tokens.
+    - Keywords like for if, function calls, operations ..
+- ***Semantics*** : Meaning of the program 
+    - How to implement for, if, etc; function calls
+- ***Optimization***: Iterate on semantics for speed, memory
+- ***Generation***: Create output binary code
+<!-- = TODO: = -->
+
+## Video 25: Linking in Embedded systems
+
+| memory layout|
+| ------------- |
+| stack| local vars
+| ` ` | ` `
+| heap |  malloc, dynamic
+| bss | uninitialized data
+| data | initialized variables array
+| rodata | read only data constants, strings 
+| text | actual code 
+
+
+- Linker script is the script that we use to add shared libraries with user source code.
+
+## Video 26: Runtime in embedded system
+- ***Reset***: electrical initialization of registers.
+- reset will change the ==PC register== to it's known initial value.
+- we can change the starting point of ==PC register== using the pin/jumper settings.
+
+- Reset Handler: code to run after reset. Used to load from external storage.
+
+#### Bare metal
+- directly load executable code to memory.
+- no run time linker/loader available.
+- Loading is done through debug/ flash or other known start address.
+
+#### Operating system
+- ==kernel== : first program that runs after starts.
+- which initialize subsystems, peripherals, etc.
+- Loader program can load other code.
+  - resolve run-time address, pointers.
+  - Jump to start of code.
+  - wait for exit, return values.
+
+## Video 27: Interrupts and exceptions
+- ==interrupt== normal flow of CPU.
+
+#### Interrupt Service Routine
+- On interrupt, halt normal flow
+- save state and jump to:
+  - new ==Interrupt vector==.
+  - vector table for different interrupts.
+
+#### Masking(Do not disturb)
+- reset is a non-maskable interrupt.
+
+#### Exception
+- internal to CPU
+  - divide by zero, undefined instruction exception.
+- Synchronous
+
+- Exception Handler
+  - software routines they have some ==vector table==
+  - context saving and software controlled.
+
+We keep ISR as short as possible by keeping a Queue.
+
+## Video 28: Power Management
+
+$
+P = V*I
+$
+$
+E = V*I*T
+$
+
+- Usually determined by current.
+- directly affects heating.
+  - heat sinks, fans, thermal design is required.
+- high power x short time.
+- low power x long time.
+
+#### Power Modes
+- Microcontroller dependent.
+- sleep, standby, shutdown, etc.
+  - v/s Normal operations
+  - different levels of power.
+- software switchable/ hardware wakeup calls.
+
+## Video 29 software architecture
+Reviewed a basic code pattern in embedded project.
+
+## Video 30: Design patterns
+
+#### State Machine
+- where we use present state of the memory compare it to the action done and update the memory to corresponding state.
+
+- state: represent the different modes.
+- Events: triggers that can cause state transitions.
+- transitions: Define how the system moves from one state to another in response to events.
+- Actions: operations performed when entering a state, exiting a state or during a state.
+
+- generally we use ==enum== for the states
 
 
